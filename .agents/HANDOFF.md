@@ -22,6 +22,9 @@
   `air-nano/` list them by size and SHA-256. They carry no download address: the files are
   private, so a device that reads this address learns a later version exists and no more.
   `release-feed.json` was left exactly as it was.
+- Checked 2026-11-22: a ThoxAir bench device read `air-nano/release.json` and `packages.json` at this
+  address over https and verified both signatures with the preview key; asked to install, it refused
+  with a plain sentence, because the files are not here.
 - Next: sign the release feed; decide whether update files get a public address (Tommy's call);
   replace the preview key with a production key before any product release.
 - Last verified: 2026-11-22 by Sadie (subagent lane, device release feeds).
