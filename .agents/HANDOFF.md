@@ -1,7 +1,10 @@
 # Agent handoff — thox-air-releases
 
 - Status: v1.0.0 published 2026-11-22. Public, list-only, mirroring ttracx/thox-key-releases.
-- Key files: `feed.json` (`thoxair-update-feed/1`, releases empty), `release-feed.json`
+- Key files: `feed.json` (`thoxair-update-feed/1`, channel `preview`: 1 release, 2 packages,
+  1 image, all for line `air-nano`, proof of concept), `air-nano/release.json` and
+  `packages.json` with `.sig` files (ECDSA P-256, preview key `thoxair-preview-2026-11`, made by
+  `scripts/make-release-list.py` in ttracx/thoxair-poc; never edit by hand), `release-feed.json`
   (`thoxair-release-feed/1`, sequence 1, 1 model item(s): thoxair-0.5b).
 - Conventions: verified values only, never invent url/bytes/sha256; bump sequence on feed
   changes; `release-feed.json` is `-text`, never convert line endings.
@@ -13,5 +16,12 @@
 - Bucket: `Thox-ai/thox-device-thoxair` is private (internal only), placeholders only at creation
   (README.md, manifest.json with artifacts: [], .keep files). Registering this feed's repo URL
   in the bucket manifest is a recorded next step, not yet done.
-- Next: sign the feed; add image/firmware/software items when they exist in the bucket.
+- 2026-11-22, second lane (ThoxAir provisioning work in ttracx/thoxair-poc): 14 artifacts are now
+  stored, read back and registered in the bucket manifest (update bundle, 2 packages, card image,
+  vendor base, signed files, preview public key), source revision 119ae69. `feed.json` and
+  `air-nano/` list them by size and SHA-256. They carry no download address: the files are
+  private, so a device that reads this address learns a later version exists and no more.
+  `release-feed.json` was left exactly as it was.
+- Next: sign the release feed; decide whether update files get a public address (Tommy's call);
+  replace the preview key with a production key before any product release.
 - Last verified: 2026-11-22 by Sadie (subagent lane, device release feeds).

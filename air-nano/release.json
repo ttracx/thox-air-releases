@@ -1,0 +1,13 @@
+{
+  "schema": "ai.thox.air-release.v1",
+  "product": "ThoxAir",
+  "version": "0.1.0",
+  "board": "air-nano",
+  "built": "2026-11-22T08:17:10Z",
+  "notes": "First listed ThoxAir software. Proof of concept.",
+  "bundle": {
+    "name": "thoxair-0.1.0-air-nano.tar",
+    "bytes": 4198400,
+    "sha256": "b5f907b83bf233475d7896e39b65761669acf058406ff82de2231db1a202f3d1"
+  }
+}

@@ -1,5 +1,46 @@
 {
   "schema": "thoxair-update-feed/1",
-  "channel": "stable",
-  "releases": []
+  "channel": "preview",
+  "published": "2026-11-22",
+  "releases": [
+    {
+      "line": "air-nano",
+      "version": "0.1.0",
+      "published": "2026-11-22",
+      "status": "proof of concept",
+      "notes": "First listed ThoxAir software. Proof of concept.",
+      "bundle": {
+        "name": "thoxair-0.1.0-air-nano.tar",
+        "bytes": 4198400,
+        "sha256": "b5f907b83bf233475d7896e39b65761669acf058406ff82de2231db1a202f3d1"
+      }
+    }
+  ],
+  "packages": [
+    {
+      "line": "air-nano",
+      "id": "model-runtime",
+      "name": "Model runtime",
+      "version": "1.0.0",
+      "bytes": 11560960,
+      "sha256": "54f88669e2fe886de6b531e85b6743fde4047c3f332fe8c2fdb90d0e2ecba335"
+    },
+    {
+      "line": "air-nano",
+      "id": "smollm2-135m-instruct",
+      "name": "SmolLM2 135M Instruct",
+      "version": "1.0.0",
+      "bytes": 105461760,
+      "sha256": "0873d4f6b1967bffdd1a1585708824c455125d6115bf098b2f422d43f9eec1ef"
+    }
+  ],
+  "images": [
+    {
+      "line": "air-nano",
+      "variant": "air-nano-micro",
+      "version": "0.1.0",
+      "bytes": 147792516,
+      "sha256": "3c37b868f92ce2332c6a88b3d11701303b317653e50af9473e3bc26607d54a57"
+    }
+  ]
 }

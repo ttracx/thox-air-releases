@@ -3,7 +3,7 @@
 Five minutes, read-only:
 
 ```sh
-# The update list (empty for now)
+# The update list (proof-of-concept entries, preview channel)
 curl -fsSL https://raw.githubusercontent.com/ttracx/thox-air-releases/main/feed.json
 
 # The release feed (models current for ThoxAir)
@@ -15,4 +15,5 @@ shasum -a 256 <downloaded-file>
 
 Compare the printed SHA-256 with the entry in `release-feed.json`. Full guide:
 [USER_GUIDE.md](USER_GUIDE.md). Formats: [FORMAT.md](FORMAT.md),
-[RELEASE-FEED.md](RELEASE-FEED.md).
+[RELEASE-FEED.md](RELEASE-FEED.md),
+[SIGNED-RELEASE-FILES.md](SIGNED-RELEASE-FILES.md).

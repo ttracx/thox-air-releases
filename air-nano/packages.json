@@ -1,0 +1,28 @@
+{
+  "schema": "ai.thox.air-packages.v1",
+  "product": "ThoxAir",
+  "board": "air-nano",
+  "packages": [
+    {
+      "id": "model-runtime",
+      "name": "Model runtime",
+      "about": "Runs a small model on this ThoxAir itself.",
+      "version": "1.0.0",
+      "file": "model-runtime-1.0.0.tar",
+      "bytes": 11560960,
+      "sha256": "54f88669e2fe886de6b531e85b6743fde4047c3f332fe8c2fdb90d0e2ecba335",
+      "role": "model-runtime"
+    },
+    {
+      "id": "smollm2-135m-instruct",
+      "name": "SmolLM2 135M Instruct",
+      "about": "A very small general model (Q4_K_M).",
+      "version": "1.0.0",
+      "file": "smollm2-135m-instruct-1.0.0.tar",
+      "bytes": 105461760,
+      "sha256": "0873d4f6b1967bffdd1a1585708824c455125d6115bf098b2f422d43f9eec1ef",
+      "role": null
+    }
+  ],
+  "built": "2026-11-22T08:17:10Z"
+}

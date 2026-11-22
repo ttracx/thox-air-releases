@@ -11,8 +11,8 @@ available to internal users only.
 
 1. Open [`release-feed.json`](../release-feed.json) for the current models and, as they are
    published, provisioning artifacts.
-2. Open [`feed.json`](../feed.json) for update releases. It is empty for now: no ThoxAir update
-   releases have been published yet.
+2. Open [`feed.json`](../feed.json) for update releases, optional packages and whole-card images.
+   What is listed today is a proof of concept on the `preview` channel, not a product release.
 
 ## Verify a download
 
@@ -29,6 +29,9 @@ shasum -a 256 <downloaded-file>
 The release feed is unsigned. No `release-feed.json.sig` is published yet, and the feed must
 not be trusted as signed until the THOX release-key holder signs it. SHA-256 checks above still
 protect individual downloads against corruption, but they do not authenticate the list itself.
+
+The per-line files a ThoxAir reads (`<release line>/release.json` and `packages.json`) are signed
+with a separate preview key: see [SIGNED-RELEASE-FILES.md](SIGNED-RELEASE-FILES.md).
 
 ## Troubleshooting
 

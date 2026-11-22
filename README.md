@@ -30,20 +30,32 @@ curl -fsSL https://raw.githubusercontent.com/ttracx/thox-air-releases/main/relea
 https://raw.githubusercontent.com/ttracx/thox-air-releases/main/feed.json
 ```
 
-No ThoxAir update releases are listed yet: `releases` is empty. Entries are added as releases are
-published. Format: [docs/FORMAT.md](docs/FORMAT.md).
+| Release line | Newest listed | Published | Status |
+| --- | --- | --- | --- |
+| `air-nano` | 0.1.0 | 2026-11-22 | proof of concept |
+
+Everything listed so far is a proof of concept on the `preview` channel. It is not a product
+release. The list also gives the exact size and SHA-256 of the optional packages and of the
+whole-card image for that line. Format: [docs/FORMAT.md](docs/FORMAT.md).
 
 ## Downloads
 
-This repository has no downloads. Each future entry will link to its release page or file, where the
-files are. Check every downloaded file against the SHA-256 values in this list. Steps:
+This repository has no downloads. The update, package and image files in `feed.json` are kept in
+the private provisioning bucket and are installed with the ThoxAir provisioning tools. Check any
+file you are given against the SHA-256 values in this list. Steps:
 [docs/USER_GUIDE.md](docs/USER_GUIDE.md).
 
-| Computer | Newest listed |
-| --- | --- |
-| Windows | none |
-| macOS | none |
-| Linux | none |
+## The signed files a ThoxAir reads
+
+For each release line there is a folder (today: [`air-nano/`](air-nano/)) holding `release.json`,
+`packages.json` and a signature for each. A ThoxAir built with this address asks for
+`https://raw.githubusercontent.com/ttracx/thox-air-releases/main/<release line>/release.json`, checks the signature against the key it was built with before
+it reads anything in the file, takes only a version later than its own, and checks any download
+against the size and SHA-256 named there. It sends no account, key or device details. These are
+signed with a preview key for proof-of-concept builds, separate from the release feed below.
+Format and key: [docs/SIGNED-RELEASE-FILES.md](docs/SIGNED-RELEASE-FILES.md).
+
+These files must not be edited by hand: any change, even to spacing, makes the signature fail.
 
 ## The release feed
 
@@ -70,6 +82,7 @@ Format and the planned signature scheme: [docs/RELEASE-FEED.md](docs/RELEASE-FEE
 
 - `feed.json` — the update list (`thoxair-update-feed/1`).
 - `release-feed.json` — the release feed (`thoxair-release-feed/1`), unsigned pending signing.
+- `<release line>/` — the signed `release.json` and `packages.json` a ThoxAir reads.
 - `docs/` — format, user guide, quick start and development docs.
 - `.agents/HANDOFF.md` — agent handoff.
 
@@ -79,6 +92,7 @@ Format and the planned signature scheme: [docs/RELEASE-FEED.md](docs/RELEASE-FEE
 - [docs/QUICKSTART.md](docs/QUICKSTART.md)
 - [docs/FORMAT.md](docs/FORMAT.md)
 - [docs/RELEASE-FEED.md](docs/RELEASE-FEED.md)
+- [docs/SIGNED-RELEASE-FILES.md](docs/SIGNED-RELEASE-FILES.md)
 - [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)
 
 ## Releases
